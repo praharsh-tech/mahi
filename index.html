@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NIT Polytechnic Nagpur – Login</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 min-h-screen flex flex-col">
+
+  <!-- ✅ TOP NAVBAR -->
+  <nav class="bg-white shadow-md py-4 px-8 flex justify-between items-center">
+    <div class="flex items-center gap-3">
+      <img src="https://via.placeholder.com/50" class="w-12 h-12 rounded" />
+      <div>
+        <h1 class="text-xl font-semibold text-blue-700">NIT Polytechnic, Nagpur</h1>
+        <p class="text-sm text-gray-600">Accredited | Approved by AICTE</p>
+      </div>
+    </div>
+
+    <ul class="flex gap-8 font-medium text-gray-700 max-sm:hidden">
+      <li class="hover:text-blue-600 cursor-pointer">Home</li>
+      <li class="hover:text-blue-600 cursor-pointer">About</li>
+      <li class="hover:text-blue-600 cursor-pointer">Departments</li>
+      <li class="hover:text-blue-600 cursor-pointer">Contact</li>
+    </ul>
+  </nav>
+
+
+  <!-- ✅ LOGIN SECTION -->
+  <main class="flex-1 flex justify-center items-center px-4 py-8">
+    <div class="bg-white shadow-xl rounded-xl p-10 w-full max-w-md">
+
+      <h2 class="text-3xl font-bold text-center text-blue-700 mb-6">
+        User Login
+      </h2>
+
+      <!-- Role -->
+      <label class="block mb-2 font-medium">Select Role</label>
+      <select id="role"
+        class="border w-full p-3 rounded-md mb-6 focus:outline-blue-500">
+        <option value="principal">Principal</option>
+        <option value="hod">HOD</option>
+      </select>
+
+      <!-- Login Button -->
+      <button onclick="login()"
+        class="bg-blue-700 hover:bg-blue-800 text-white w-full p-3 rounded-md text-lg font-medium">
+        Login
+      </button>
+    </div>
+  </main>
+
+
+  <!-- ✅ FOOTER -->
+  <footer class="bg-blue-900 text-white py-6 text-center text-sm">
+    <p class="font-medium">NIT Polytechnic, Nagpur</p>
+    <p>Near Airport Nagpur, Maharashtra - 440025</p>
+    <p>Phone: +91 9876543210 | Email: info@nitpoly.edu.in</p>
+    <p class="mt-2 text-xs text-gray-200">© 2025 All Rights Reserved</p>
+  </footer>
+
+
+  <script src="script.js"></script>
+</body>
+</html>
