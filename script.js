@@ -1,84 +1,46 @@
+// SHOW / HIDE HOD DEPARTMENT DROPDOWN
+function toggleHodList() {
+  const role = document.getElementById("role").value;
+  const hodBox = document.getElementById("hodBox");
+
+  role === "hod"
+    ? hodBox.classList.remove("hidden")
+    : hodBox.classList.add("hidden");
+}
+
+// LOGIN
 function login() {
-  let role = document.getElementById("role").value;
+  const role = document.getElementById("role").value;
+  const hod = document.getElementById("hodType").value;
+
+  if (!role) {
+    alert("Please select role");
+    return;
+  }
+
+  // Store role
   localStorage.setItem("role", role);
 
-  if (role === "principal") window.location = "principal.html";
-  else window.location = "hod.html";
+  // Principal → Redirect
+  if (role === "principal") {
+    window.location.href = "principal.html";
+    return;
+  }
+
+  // HOD → Must select dept
+  if (role === "hod") {
+    if (!hod) {
+      alert("Please select HOD department");
+      return;
+    }
+
+    localStorage.setItem("hodDept", hod);
+    window.location.href = "hod.html";
+  }
 }
 
+// LOGOUT
 function logout() {
-  localStorage.removeItem("role");
-  window.location = "index.html";
+  localStorage.clear();
+  window.location.href = "index.html";
 }
-
-let tasks = JSON.parse(localStorage.getItem("tasks") || "[]");
-
-// ✅ ADD TASK
-function addTask() {
-  let text = document.getElementById("taskText").value;
-  if (!text) return alert("Please enter task");
-
-  tasks.push({ text, status: "Pending" });
-  localStorage.setItem("tasks", JSON.stringify(tasks));
-  document.getElementById("taskText").value = "";
-  showTasks();
-  alert("✅ Task Added!\n(Email Will Be Sent)");
-}
-
-// ✅ SHOW - PRINCIPAL UI
-function showTasks() {
-  let list = document.getElementById("taskList");
-  if (!list) return;
-
-  list.innerHTML = "";
-  tasks.forEach((t) => {
-    let statusColor =
-      t.status === "Pending"
-        ? "bg-yellow-300"
-        : t.status === "Processing"
-        ? "bg-blue-300"
-        : "bg-green-300";
-
-    list.innerHTML += `
-      <div class="bg-white shadow p-4 rounded-md flex justify-between items-center border">
-        <p class="font-medium">${t.text}</p>
-        <span class="text-sm px-3 py-1 rounded-md ${statusColor}">
-          ${t.status}
-        </span>
-      </div>`;
-  });
-}
-
-// ✅ SHOW + UPDATE — HOD UI
-function showHOD() {
-  let hodList = document.getElementById("hodList");
-  if (!hodList) return;
-
-  hodList.innerHTML = "";
-  tasks.forEach((t, i) => {
-    hodList.innerHTML += `
-      <div class="bg-white shadow p-4 rounded-md flex justify-between items-center border">
-        
-        <p class="font-medium">${t.text}</p>
-
-        <select class="border p-2 rounded-md"
-          onchange="changeStatus(${i}, this.value)">
-        
-          <option ${t.status==="Pending"?"selected":""}>Pending</option>
-          <option ${t.status==="Processing"?"selected":""}>Processing</option>
-          <option ${t.status==="Completed"?"selected":""}>Completed</option>
-
-        </select>
-      </div>`;
-  });
-}
-
-function changeStatus(i, val) {
-  tasks[i].status = val;
-  localStorage.setItem("tasks", JSON.stringify(tasks));
-  showHOD();
-}
-
-// Auto render
-showTasks();
-showHOD();

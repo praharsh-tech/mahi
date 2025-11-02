@@ -6,6 +6,7 @@
   <title>Principal Dashboard</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
+
 <body class="bg-gray-100 min-h-screen">
 
   <!-- NAVBAR -->
@@ -22,12 +23,22 @@
     <div class="bg-white p-6 rounded-xl shadow-lg mb-8">
       <h2 class="text-xl font-semibold mb-4">Assign New Task</h2>
 
+      <!-- ✅ MULTIPLE HOD SELECTION -->
+      <label class="block mb-2 font-medium">Select HOD(s)</label>
+      <div class="flex gap-6 flex-wrap mb-4">
+        <label><input type="checkbox" class="hodCheck" value="cs"> CS</label>
+        <label><input type="checkbox" class="hodCheck" value="mech"> Mechanical</label>
+        <label><input type="checkbox" class="hodCheck" value="elec"> Electrical</label>
+        <label><input type="checkbox" class="hodCheck" value="civil"> Civil</label>
+      </div>
+
       <div class="flex gap-3 max-sm:flex-col">
         <input id="taskText" placeholder="Enter Task"
           class="border w-full p-3 rounded-md focus:outline-blue-500" />
-        <button onclick="addTask()"
+
+        <button onclick="assignTask()"
           class="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-lg">
-          Add Task
+          Assign Task
         </button>
       </div>
     </div>
@@ -38,6 +49,6 @@
 
   </main>
 
-  <script src="script.js"></script>
+  <script src="/principle.js"></script>
 </body>
 </html>

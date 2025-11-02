@@ -38,11 +38,24 @@
 
       <!-- Role -->
       <label class="block mb-2 font-medium">Select Role</label>
-      <select id="role"
+      <select id="role" onchange="toggleHodList()"
+
         class="border w-full p-3 rounded-md mb-6 focus:outline-blue-500">
         <option value="principal">Principal</option>
         <option value="hod">HOD</option>
       </select>
+
+      <!-- Multiple HOD selection (hidden by default) -->
+      <div id="hodBox" class="hidden">
+  <label class="block mb-2 font-medium">Select HOD</label>
+  <select id="hodType" class="border w-full p-3 rounded-md mb-6">
+    <option value="">-- Select HOD --</option>
+    <option value="cs">Computer Science</option>
+    <option value="mech">Mechanical</option>
+    <option value="elec">Electrical</option>
+    <option value="civil">Civil</option>
+  </select>
+</div>
 
       <!-- Login Button -->
       <button onclick="login()"

@@ -11,19 +11,37 @@
   <!-- NAVBAR -->
   <header class="bg-blue-700 text-white px-6 py-4 flex justify-between items-center shadow">
     <h1 class="text-2xl font-semibold">HOD Dashboard</h1>
-    <button onclick="logout()" class="bg-red-500 hover:bg-red-600 px-4 py-2 rounded-md">
-      Logout
-    </button>
+    <div class="flex items-center gap-4">
+      <p id="hodName" class="font-medium"></p>
+      <button onclick="logout()" class="bg-red-500 hover:bg-red-600 px-4 py-2 rounded-md">
+        Logout
+      </button>
+    </div>
   </header>
 
-  <main class="p-6 max-w-4xl mx-auto">
+  <main class="p-6 max-w-5xl mx-auto space-y-6">
 
-    <h2 class="text-2xl font-semibold mb-3">Update Task Status</h2>
+    <!-- HOD CARD -->
+    <section class="bg-white shadow-md rounded-xl p-6 flex items-center gap-6">
+      <img id="hodImage" src="https://via.placeholder.com/100" class="w-28 h-28 rounded-xl object-cover border" />
 
-    <div id="hodList" class="space-y-3"></div>
+      <div class="space-y-1">
+        <h2 id="hodFullName" class="text-xl font-semibold text-gray-800">HOD Name</h2>
+        <p id="hodDept" class="text-gray-600">Department</p>
+        <p id="hodEmail" class="text-gray-600">Email</p>
+        <p id="hodPhone" class="text-gray-600">Phone</p>
+      </div>
+    </section>
+
+    <!-- UPDATE TASK SECTION -->
+    <section>
+      <h2 class="text-2xl font-semibold mb-3">Update Task Status</h2>
+      <div id="hodList" class="space-y-3"></div>
+    </section>
 
   </main>
 
-  <script src="script.js"></script>
+<script type="module" src="hod.js"></script>
+
+
 </body>
-</html>
