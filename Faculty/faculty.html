@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Faculty Dashboard | NIT Polytechnic</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 min-h-screen">
+  <header class="bg-blue-700 text-white px-6 py-4 flex justify-between items-center shadow">
+    <h1 class="text-2xl font-semibold">Faculty Dashboard</h1>
+    <button onclick="logout()" class="bg-red-500 hover:bg-red-600 px-4 py-2 rounded-md">Logout</button>
+  </header>
+
+  <main class="p-6 max-w-5xl mx-auto space-y-6">
+    <!-- Faculty Profile -->
+    <section class="bg-white shadow-md rounded-xl p-6 flex items-center gap-6">
+      <img id="facultyImage" src="https://via.placeholder.com/100" class="w-28 h-28 rounded-xl object-cover border" />
+      <div class="space-y-1">
+        <h2 id="facultyFullName" class="text-xl font-semibold text-gray-800">Faculty Name</h2>
+        <p id="facultyDept" class="text-gray-600">Department</p>
+        <p id="facultyEmail" class="text-gray-600">Email</p>
+        <p id="facultyPhone" class="text-gray-600">Phone</p>
+      </div>
+    </section>
+
+    <!-- Assigned Tasks -->
+    <section>
+      <h2 class="text-2xl font-semibold mb-4 text-blue-700">Assigned Tasks</h2>
+      <div id="facultyTasks" class="space-y-4"></div>
+    </section>
+  </main>
+
+  <script type="module" src="./faculty.js"></script>
+</body>
+</html>

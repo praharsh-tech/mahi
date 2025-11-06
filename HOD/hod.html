@@ -3,28 +3,21 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>HOD Dashboard</title>
+  <title>HOD Dashboard | NIT Polytechnic</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gray-100 min-h-screen">
 
+<body class="bg-gray-100 min-h-screen">
   <!-- NAVBAR -->
   <header class="bg-blue-700 text-white px-6 py-4 flex justify-between items-center shadow">
     <h1 class="text-2xl font-semibold">HOD Dashboard</h1>
-    <div class="flex items-center gap-4">
-      <p id="hodName" class="font-medium"></p>
-      <button onclick="logout()" class="bg-red-500 hover:bg-red-600 px-4 py-2 rounded-md">
-        Logout
-      </button>
-    </div>
+    <button onclick="logout()" class="bg-red-500 hover:bg-red-600 px-4 py-2 rounded-md">Logout</button>
   </header>
 
   <main class="p-6 max-w-5xl mx-auto space-y-6">
-
-    <!-- HOD CARD -->
+    <!-- HOD PROFILE -->
     <section class="bg-white shadow-md rounded-xl p-6 flex items-center gap-6">
       <img id="hodImage" src="https://via.placeholder.com/100" class="w-28 h-28 rounded-xl object-cover border" />
-
       <div class="space-y-1">
         <h2 id="hodFullName" class="text-xl font-semibold text-gray-800">HOD Name</h2>
         <p id="hodDept" class="text-gray-600">Department</p>
@@ -33,15 +26,13 @@
       </div>
     </section>
 
-    <!-- UPDATE TASK SECTION -->
+    <!-- TASKS -->
     <section>
-      <h2 class="text-2xl font-semibold mb-3">Update Task Status</h2>
-      <div id="hodList" class="space-y-3"></div>
+      <h2 class="text-2xl font-semibold mb-4 text-blue-700">Assigned Tasks</h2>
+      <div id="hodTasks" class="space-y-4"></div>
     </section>
-
   </main>
 
-<script type="module" src="hod.js"></script>
-
-
+  <script type="module" src="./hod.js"></script>
 </body>
+</html>
