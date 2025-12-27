@@ -17,6 +17,8 @@ function toggleDeptBox() {
         <option value="hod_mech">Mechanical</option>
         <option value="hod_elec">Electrical</option>
         <option value="hod_civil">Civil</option>
+         <option value="hod_electronic">electronic</option>
+        
       `;
     } else if (role === "faculty") {
       deptSelect.innerHTML = `
@@ -25,6 +27,7 @@ function toggleDeptBox() {
         <option value="faculty_mech">Mechanical</option>
         <option value="faculty_elec">Electrical</option>
         <option value="faculty_civil">Civil</option>
+        <option value="faculty_electronic">Electronic</option>
       `;
     }
   } else {
